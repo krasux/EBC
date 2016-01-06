@@ -1,2 +1,5 @@
-<RCC/>
-
+<RCC>
+    <qresource prefix="/bg">
+        <file>backgroud.png</file>
+    </qresource>
+</RCC>
