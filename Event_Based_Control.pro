@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     scene.cpp \
-    controller.cpp
+    controller.cpp \
+    simulation.cpp
 
 HEADERS  += mainwindow.h \
     scene.h \
-    controller.h
+    controller.h \
+    simulation.h
 
 FORMS    += mainwindow.ui
 
