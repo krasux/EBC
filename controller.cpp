@@ -6,7 +6,7 @@
 
     Controller::Controller(QThread *parent) : QThread(parent)
     {
-
+        init();
     }
 
     void Controller::UpdateState(QString value)
@@ -26,20 +26,6 @@
 
      int Controller::process()
      {
-         /*
-        QString wiadomosc[3] = {"to jest wiadomosc","to jest druga","to jest rzecia"};
-        QString mess;
-        int cc=0;
-        while(true)
-        {
-            this->sleep(3);
-            mess=wiadomosc[cc];
-            emit FireTrans(mess);
-            cc++;
-            if(cc>2)
-                    cc=0;
-        }
-        */
          int NextTask=0;
              if(IfThereAreUnfinishedTasks(Finished))
              {
@@ -75,9 +61,7 @@
 
 
                  }
-                 //TODO Sleep???
-                 //std::vector<std::string> vect=CreateVectorToVisualization(Finished,Steps,TasksTypes,Types);
-                 //PutVisVectOnConsole(vect);
+
                  QList<QStringList> toEmit;
                  toEmit = CreateVectorToVisualization(Finished,Steps,TasksTypes,Types);
                  qDebug() << toEmit;
@@ -90,15 +74,6 @@
              }
 
      }
-
-     int Controller::EmitState()
-     {
-         //std::vector<std::string> vect=CreateVectorToVisualization(Finished,Steps,TasksTypes,Types);
-         //PutVisVectOnConsole(vect);
-
-         //setMarkings();
-     }
-
 
      void Controller::init()
      {
@@ -172,13 +147,17 @@
          _Marking<< 0,3,0,2,0,3,0,3,0,2,3,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,2,0,1;
 
          _Marking[PARKING]=18;
-         _Marking[M1F]; // buffers
+
 
          this->Marking=_Marking;
 
-         std::vector<int> _TasksTypes(2);
-         _TasksTypes[0]=1;
-         _TasksTypes[1]=2; // ilosc zadan
+         std::vector<int> _TasksTypes(5);
+         _TasksTypes[0]=0;
+         _TasksTypes[1]=1; // ilosc zadan
+         _TasksTypes[2]=2;
+         _TasksTypes[3]=3;
+         _TasksTypes[4]=4;
+
 
          this->TasksTypes=_TasksTypes;
 
@@ -349,17 +328,5 @@
          return VisVecta;
      }
 
-     void PutVisVectOnConsole(std::vector<std::string> In)
-     {
-         QString str;
 
-
-
-         for(int i=0;i<In.size();i++)
-         {
-             str=QString::fromStdString(In[i]);
-             qDebug()<<str<<"\t";
-         }
-         qDebug()<<endl;
-     }
 
