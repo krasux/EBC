@@ -14,33 +14,30 @@ public:
     explicit Scene(QObject *parent = 0);
     ~Scene();
 
+
 private:
-    QGraphicsRectItem *machine1;
-    QGraphicsRectItem *machine2;
-    QGraphicsRectItem *machine3;
-    QGraphicsRectItem *machine4;
-    QGraphicsRectItem *machine5;
-    QGraphicsRectItem *washingStation1;
-    QGraphicsRectItem *washingStation2;
-    QGraphicsRectItem *rawMaterialsWarehouse;
-    QGraphicsRectItem *parking;
-    QGraphicsRectItem *endPoingWarehouse;
     QGraphicsEllipseItem *itemA;
 
     QPixmap *backgroud;
 
     QList<QStringList> markingsList;
-    int m_value;
+    QHash<QString, QPointF> positionHash;
 
-    void drawScheme();
+
+    QList<QBrush> getBrushes();
+    QPen getPen();
     void test();
     void setBackground();
+
+    void setUpPositionTable();
+    QPointF positionOf(QString elementName, int translation);
+    QSizeF getSizeOfMarking();
 
 signals:
 
 
 public slots:
-    void drawMarkings(const QList<QStringList> &newMarkingsList);
+    void drawMarkings(const QList<QStringList> &marking);
 };
 
 #endif // SCENE_H

@@ -27,3 +27,5 @@ FORMS    += mainwindow.ui
 
 RESOURCES += \
     graphics.qrc
+
+CONFIG += c++14
