@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
+#include <QDebug>
+#include <QDate>
 
 class Scene : public QGraphicsScene
 {
@@ -27,11 +29,18 @@ private:
 
     QPixmap *backgroud;
 
+    QList<QStringList> markingsList;
+    int m_value;
+
     void drawScheme();
+    void test();
+    void setBackground();
+
 signals:
 
-public slots:
 
+public slots:
+    void drawMarkings(const QList<QStringList> &newMarkingsList);
 };
 
 #endif // SCENE_H
