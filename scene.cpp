@@ -5,12 +5,27 @@
 
 void Scene::setUpPositionTable()
 {
-    positionHash.insert("WR", QPointF(35, 205));
+    positionHash.insert("WR", QPointF(20, 205));
+    positionHash.insert("W1", QPointF(182, 205));
+    positionHash.insert("W2", QPointF(650, 205));
+    positionHash.insert("PARKING", QPointF(35, 205));
+
     positionHash.insert("M1", QPointF(365, 75));
     positionHash.insert("M2", QPointF(540, 75));
     positionHash.insert("M3", QPointF(450, 200));
     positionHash.insert("M4", QPointF(365, 320));
     positionHash.insert("M5", QPointF(540, 320));
+
+    positionHash.insert("R1", QPointF(132, 180));
+    positionHash.insert("R2", QPointF(315, 180));
+    positionHash.insert("R3", QPointF(476, 54));
+    positionHash.insert("R4", QPointF(476, 296));
+    positionHash.insert("R5", QPointF(580, 180));
+    positionHash.insert("R6", QPointF(650, 296));
+    positionHash.insert("R7", QPointF(650, 54));
+    positionHash.insert("R8", QPointF(650, 445));
+    positionHash.insert("R9", QPointF(476, 445));
+    positionHash.insert("R10", QPointF(200, 445));
 }
 
 QPointF Scene::positionOf(QString elementName, int translation = 0)
@@ -29,11 +44,6 @@ Scene::Scene(QObject *parent) : QGraphicsScene(parent)
 
     qDebug() << "Date:" << QDate::currentDate();
 
-
-
-
-    qDebug() << positionHash;
-    qDebug() << positionOf("M3", 1);
 }
 
 
@@ -50,10 +60,11 @@ void Scene::test()
     QStringList list2;
     QStringList list3;
     QStringList list4;
-    list1 << "M1" << "M2";
-    list2 << "M3";
-    list3 << "M4";
-    list4 << "M5";
+    list1 << "R1" << "R2" << "R3" << "R4"
+          << "R5" << "R6" << "R7" << "R8" << "R9" << "R10";
+    list2 << "W1";
+    list3 << "W2";
+
 
     testMarkingList << list1 << list2 << list3 << list4;
     qDebug() << testMarkingList;
@@ -102,7 +113,7 @@ void Scene::drawMarkings(const QList<QStringList> &marking)
         qDebug() << i;
         foreach(QString elem, *it)
         {
-            QPointF position = positionOf(elem);
+            QPointF position = positionOf(elem, i);
             QRectF rect(position, size);
             addEllipse(rect, pen, brushes[i]);
         }
