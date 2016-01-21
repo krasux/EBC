@@ -329,4 +329,67 @@
      }
 
 
+     int ChangeToPlace(int TransitionToFire)
+     {
+         int ret=-1;
+         switch (TransitionToFire)
+         {
+                 case  T00 :
+                     ret=R10;break;
+                 case  T01 :
+                     ret=WR;break;
+                 case  T02 :
+                     ret=R1;break;
+                 case  T03 :
+                     ret=W1;break;
+                 case  T04 :
+                     ret=R2;break;
+                 case  T05 :
+                     ret=M1;break;
+                 case  T06 :
+                     ret=M3;break;
+                 case  T07 :
+                     ret=M4;break;
+                 case  T08 :
+                     ret=R3;break;
+                 case  T09 :
+                     ret=R5;break;
+                 case  T10 :
+                     ret=R4;break;
+                 case  T11 :
+                     ret=M2;break;
+                 case  T12 :
+                     ret=M3;break;
+                 case  T13 :
+                     ret=R7;break;
+                 case  T14 :
+                     ret=M3;break;
+                 case  T15 :
+                     ret=M5;break;
+                 case  T16 :
+                     ret=R6;break;
+                 case  T17 :
+                     ret=W2;break;
+                 case  T18 :
+                     ret=W2;break;
+                 case  T19 :
+                     ret=W2;break;
+                 case  T20 :
+                     ret=S;break;
+                 case  T21 :
+                     ret=R9;break;
+                 case  T22 :
+                     ret=PARKING;break;
+         }
+         return ret;
+
+     }
+
+     void Controller::TaskEnd(int TaskNumber)
+     {
+         RunningOnPlant[TaskNumber]=0;
+     }
+
+
+
 

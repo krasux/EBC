@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QString>
-#include<QThread>
+#include <QThread>
 class Simulation : public QThread
 {
 
@@ -15,10 +15,16 @@ public:
 
 private:
     QString StateField;
+    int * place_times;
 public:
     void value();
+    void init();
+signals:
+    void TaskEnd(int TaskNumber);
 public slots:
     void UpdateState(QString value);
+public slots:
+    void TimerTimeout();
 };
 
 #endif // SIMULATION_H
