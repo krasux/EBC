@@ -30,14 +30,14 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
           <number>0</number>
          </property>
          <widget class="QWidget" name="tabWidgetPage1">
           <attribute name="title">
-           <string/>
+           <string>Tasks</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
@@ -49,56 +49,89 @@
               <item>
                <layout class="QGridLayout" name="gridLayout">
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="spinBox"/>
+                 <widget class="QSpinBox" name="type1">
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="0" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label">
                   <property name="text">
-                   <string>Task 1:</string>
+                   <string>Type 1:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label_2">
                   <property name="text">
-                   <string>Task 2:</string>
+                   <string>Type 2:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label_3">
                   <property name="text">
-                   <string>Task 3:</string>
+                   <string>Type 3:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label_4">
                   <property name="text">
-                   <string>Task 4:</string>
+                   <string>Type 4:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QSpinBox" name="spinBox_3"/>
+                 <widget class="QSpinBox" name="type3">
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QSpinBox" name="spinBox_2"/>
+                 <widget class="QSpinBox" name="type2">
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QSpinBox" name="spinBox_4"/>
+                 <widget class="QSpinBox" name="type4">
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="4" column="0" alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label_5">
                   <property name="text">
-                   <string>Task 5:</string>
+                   <string>Type 5:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QSpinBox" name="spinBox_5"/>
+                 <widget class="QSpinBox" name="type5">
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
                 </item>
                </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -107,13 +140,13 @@
          </widget>
          <widget class="QWidget" name="tabWidgetPage2">
           <attribute name="title">
-           <string/>
+           <string>Buffers</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
             <widget class="QGroupBox" name="groupBox_2">
              <property name="title">
-              <string>Parameters</string>
+              <string>Machines:</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="0">
@@ -121,46 +154,213 @@
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_6">
                   <property name="text">
-                   <string>Buffer 1:</string>
+                   <string>Machine 1:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_7">
                   <property name="text">
-                   <string>Buffer 2:</string>
+                   <string>Machine 2:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="spinBox_6">
+                 <widget class="QSpinBox" name="mBuffer1">
                   <property name="minimum">
                    <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QSpinBox" name="spinBox_7">
+                 <widget class="QSpinBox" name="mBuffer2">
                   <property name="minimum">
                    <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Machine 5:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="0">
-                 <widget class="QLabel" name="label_8">
+                 <widget class="QLabel" name="label_9">
                   <property name="text">
-                   <string>Buffer 2:</string>
+                   <string>Machine 3:</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QSpinBox" name="spinBox_8">
+                 <widget class="QSpinBox" name="mBuffer3">
                   <property name="minimum">
                    <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSpinBox" name="mBuffer4">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QSpinBox" name="mBuffer5">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Machine 4:</string>
                   </property>
                  </widget>
                 </item>
                </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="title">
+              <string>Washing stations:</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="spinBox_2">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="spinBox">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>Station 1: </string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_12">
+                  <property name="text">
+                   <string>Station 2:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_4">
+                <property name="title">
+                 <string>Others:</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <layout class="QGridLayout" name="gridLayout_6">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_13">
+                     <property name="text">
+                      <string>Parking:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_15">
+                     <property name="text">
+                      <string>RMW:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_14">
+                     <property name="text">
+                      <string>EPW:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QSpinBox" name="spinBox_3">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="value">
+                      <number>3</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QSpinBox" name="spinBox_4">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="value">
+                      <number>3</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QSpinBox" name="spinBox_5">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="value">
+                      <number>3</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -171,6 +371,19 @@
        </item>
        <item>
         <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -245,7 +458,7 @@
      <x>0</x>
      <y>0</y>
      <width>1069</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

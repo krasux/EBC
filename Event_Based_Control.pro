@@ -21,7 +21,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     scene.h \
     controller.h \
-    simulation.h
+    simulation.h \
+    trans.hpp
 
 FORMS    += mainwindow.ui
 

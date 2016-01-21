@@ -25,7 +25,7 @@ private:
 
 
     QList<QBrush> getBrushes();
-    QPen getPen();
+    QList<QPen> getPens();
     void test();
     void setBackground();
 
