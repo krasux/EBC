@@ -80,6 +80,7 @@
                  //PutVisVectOnConsole(vect);
                  QList<QStringList> toEmit;
                  toEmit = CreateVectorToVisualization(Finished,Steps,TasksTypes,Types);
+                 qDebug() << toEmit;
                  emitMarkings(toEmit);
                  return 1;
              }
@@ -171,12 +172,13 @@
          _Marking<< 0,3,0,2,0,3,0,3,0,2,3,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,2,0,1;
 
          _Marking[PARKING]=18;
+         _Marking[M1F]; // buffers
 
          this->Marking=_Marking;
 
          std::vector<int> _TasksTypes(2);
          _TasksTypes[0]=1;
-         _TasksTypes[1]=2;
+         _TasksTypes[1]=2; // ilosc zadan
 
          this->TasksTypes=_TasksTypes;
 

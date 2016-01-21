@@ -19,12 +19,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    Scene *scene;
 
 private:
     Ui::MainWindow *ui;
-    Scene *scene;
-    QGraphicsEllipseItem *ellipse;
-    QGraphicsRectItem *rectangle;
+
+
 
 
 

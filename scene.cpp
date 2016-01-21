@@ -7,7 +7,8 @@ void Scene::setUpPositionTable()
     positionHash.insert("WR", QPointF(20, 205));
     positionHash.insert("W1", QPointF(182, 205));
     positionHash.insert("W2", QPointF(650, 205));
-    positionHash.insert("PARKING", QPointF(35, 205));
+    positionHash.insert("PARKING", QPointF(365, 465));
+    positionHash.insert("S", QPointF(540, 465));
 
     positionHash.insert("M1", QPointF(365, 75));
     positionHash.insert("M2", QPointF(540, 75));
@@ -58,7 +59,7 @@ void Scene::test()
     QStringList list2;
     QStringList list3;
     QStringList list4;
-    list1 << "M1" << "M1" << "R3" << "R4"
+    list1 << "M1" << "S" << "PARKING" << "R4"
          << "R5" << "R6" << "R7" << "R8" << "R9" << "R10";
     list2 << "W1";
     list3 << "W2";
@@ -113,6 +114,8 @@ QSizeF Scene::getSizeOfMarking()
 
 void Scene::drawMarkings(const QList<QStringList> &marking)
 {
+    clear();
+    setBackground();
     QList<QBrush> brushes = getBrushes();
     QList<QPen> pens = getPens();
     QSizeF size = getSizeOfMarking();

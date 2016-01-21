@@ -44,6 +44,8 @@ public:
 signals:
     void FireTrans(QString value);
     void emitMarkings(const QList<QStringList> &marking);
+
+    //void setTaskType1(int taskNumber);
 public:
     void UpdateState(QString value);
 };

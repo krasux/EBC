@@ -15,8 +15,10 @@ int main(int argc, char *argv[])
     QObject::connect(&Cont, SIGNAL(FireTrans(QString)),
                       &Sim, SLOT(UpdateState(QString)));
 
-    QObject::connect(&Cont, SIGNAL(FireTrans(QString)),
-                      &Sim, SLOT(UpdateState(QString)));
+    qRegisterMetaType< QList<QStringList> >( "QList<QString>" );
+
+    QObject::connect(&Cont, SIGNAL(emitMarkings(QList<QStringList> )),
+                      w.scene, SLOT(drawMarkings(QList<QStringList> )));
     Sim.start();
     Cont.start();
     while(true)
