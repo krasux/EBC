@@ -50,6 +50,8 @@ private:
     void updateTasksTypesList();
     void updateBuffers();
 
+    void updateInitialBuffers();
+
 signals:
     void FireTrans(QString value);
     void emitMarkings(const QList<QStringList> &marking);
@@ -72,7 +74,12 @@ public slots:
     void updatemBuffer4(int value);
     void updatemBuffer5(int value);
 
+    void updatesBuffer1(int value);
+    void updatesBuffer2(int value);
 
+    void udpateparkingBuffer(int value);
+    void updateepwBuffer(int value);
+    void updatermwBuffer(int value);
 
 };
 

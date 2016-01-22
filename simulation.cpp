@@ -1,6 +1,8 @@
 #include "simulation.h"
 #include <QDebug>
 #include <QTimer>
+#include "trans.hpp"
+
 Simulation::Simulation(QThread *parent) : QThread(parent)
 {
 
@@ -53,7 +55,7 @@ void Simulation::UpdateState(QString value)
 
             QTimer * timer = new QTimer();
 
-
+            qDebug()<<"Timer launch on place: "<<place_number<<endl;
             connect(timer, SIGNAL(timeout()), this, SLOT(TimerTimeout()));
             timer->start(shot_time);
             timer->setProperty("A",TaskNumber);
@@ -91,6 +93,14 @@ void Simulation::init()
     place_times = new int[36];
     for(int i=0; i<36;i++)
     {
-        place_times[i]=5000;
+        if(i%3)
+        {
+            place_times[i]=1000;
+        }
+        else
+        {
+            place_times[i]=3000;
+        }
     }
+    place_times[R1] = 10000;
 }

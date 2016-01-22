@@ -37,7 +37,27 @@ int main(int argc, char *argv[])
     QObject::connect(w.ui->type5, SIGNAL(valueChanged(int)),
                      &Cont, SLOT(updateTask5(int)));
 
+    QObject::connect(w.ui->mBuffer1, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatemBuffer1(int)));
+    QObject::connect(w.ui->mBuffer2, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatemBuffer2(int)));
+    QObject::connect(w.ui->mBuffer3, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatemBuffer3(int)));
+    QObject::connect(w.ui->mBuffer4, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatemBuffer4(int)));
+    QObject::connect(w.ui->mBuffer5, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatemBuffer5(int)));
 
+    QObject::connect(w.ui->pBuffer, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(udpateparkingBuffer(int)));
+    QObject::connect(w.ui->epwBuffer, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updateepwBuffer(int)));
+    QObject::connect(w.ui->rmwBuffer, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatermwBuffer(int)));
+    QObject::connect(w.ui->sBuffer1, SIGNAL(valueChanged(int)),
+                    &Cont, SLOT(updatesBuffer1(int)));
+    QObject::connect(w.ui->sBuffer2, SIGNAL(valueChanged(int)),
+                     &Cont, SLOT(updatesBuffer12int));
 
     w.show();
     Sim.start();

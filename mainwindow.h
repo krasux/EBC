@@ -21,13 +21,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     Scene *scene;
-
-
     Ui::MainWindow *ui;
-    QPushButton *btn;
-
-
-
 
 };
 

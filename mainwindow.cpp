@@ -7,9 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     scene = new Scene(this);
-
     ui->sceneView->setScene(scene);
-
 }
 
 MainWindow::~MainWindow()
