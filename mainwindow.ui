@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1069</width>
-    <height>698</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -250,7 +250,7 @@
               <item>
                <layout class="QGridLayout" name="gridLayout_5">
                 <item row="1" column="1">
-                 <widget class="QSpinBox" name="spinBox_2">
+                 <widget class="QSpinBox" name="sBuffer2">
                   <property name="minimum">
                    <number>1</number>
                   </property>
@@ -260,7 +260,7 @@
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="spinBox">
+                 <widget class="QSpinBox" name="sBuffer1">
                   <property name="minimum">
                    <number>1</number>
                   </property>
@@ -315,17 +315,17 @@
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QSpinBox" name="spinBox_3">
+                    <widget class="QSpinBox" name="pBuffer">
                      <property name="minimum">
                       <number>1</number>
                      </property>
                      <property name="value">
-                      <number>3</number>
+                      <number>20</number>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QSpinBox" name="spinBox_4">
+                    <widget class="QSpinBox" name="epwBuffer">
                      <property name="minimum">
                       <number>1</number>
                      </property>
@@ -335,7 +335,7 @@
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QSpinBox" name="spinBox_5">
+                    <widget class="QSpinBox" name="rmwBuffer">
                      <property name="minimum">
                       <number>1</number>
                      </property>
@@ -370,6 +370,19 @@
         </widget>
        </item>
        <item>
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -399,23 +412,9 @@
         <widget class="QFrame" name="frame_2">
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="btnUpdate">
             <property name="text">
-             <string>Pause</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_3">
-            <property name="text">
-             <string>Restart</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Start</string>
+             <string>Update</string>
             </property>
            </widget>
           </item>

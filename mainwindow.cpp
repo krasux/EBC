@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     scene = new Scene(this);
 
     ui->sceneView->setScene(scene);
+
 }
 
 MainWindow::~MainWindow()

@@ -4,8 +4,13 @@
     #include <QString>
 
 
-    Controller::Controller(QThread *parent) : QThread(parent)
+    Controller::Controller(QThread *parent) :
+        QThread(parent), taskNumbersFromUI{1, 1, 1, 1, 1},
+        taskTypesFromUI{0, 0, 1, 1, 2, 2},
+        buffersFromUI(37)
     {
+        //this->TasksTypes = QList2Vector(taskTypesFromUI);
+        this->buffersFromUI << 0,3,0,2,0,3,0,3,0,2,5,0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,2,0,1;
         init();
     }
 
@@ -48,7 +53,7 @@
                              FireTransition(Incidence, TransitionToFire, Marking);
                              Steps[NextTask]++;
                              IncreasePrioritiesExcept(Priorities,Finished,RunningOnPlant,Incidence,Steps,TasksTypes,Types,Marking,NextTask);
-                             //RunningOnPlant[NextTask]=1;//TODO zlapany sygnal zmienia to pole w klasie
+                             RunningOnPlant[NextTask]=1;//TODO zlapany sygnal zmienia to pole w klasie
                                          //wysylalmy tranz zadanie, otrzymujemy zadanie
                              QString message;
                              message.append(QString::number(TransitionToFire));
@@ -149,8 +154,8 @@
          _Marking[PARKING]=18;
 
 
-         this->Marking=_Marking;
-
+         this->Marking = _Marking;
+        //updateBuffers();
          std::vector<int> _TasksTypes(5);
          _TasksTypes[0]=0;
          _TasksTypes[1]=1; // ilosc zadan
@@ -159,8 +164,8 @@
          _TasksTypes[4]=4;
 
 
-         this->TasksTypes=_TasksTypes;
-
+         //this->TasksTypes = QList2Vector(taskTypesFromUI);
+         updateTasksTypesList();
          std::vector<int> _Steps(TasksTypes.size(),0);		//next step
          std::vector<int> _Finished(TasksTypes.size(),0);	//0-running,1-finished
          std::vector<int> _Priorities(TasksTypes.size(),0);	//priorities from 0 (lowest)
@@ -391,5 +396,101 @@
      }
 
 
+std::vector<int> Controller::QList2Vector(QList<int> list)
+{
+    std::vector<int> newList(list.size());
+    for(auto it = list.begin(); it != list.end(); ++it)
+    {
+        auto i = it - list.begin();
+        newList[i] = *it;
+    }
+    return newList;
+}
+
+void Controller::restart()
+{
+    qDebug() << "Auch!";
+    init();
+}
+
+void Controller::update()
+{
+    qDebug() << "Auch!";
+    init();
+}
 
 
+void Controller::updateTask1(int value)
+{
+    taskNumbersFromUI[0] = value;
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updateTask2(int value)
+{
+    taskNumbersFromUI[1] = value;
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updateTask3(int value)
+{
+    taskNumbersFromUI[2] = value;
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updateTask4(int value)
+{
+    taskNumbersFromUI[3] = value;
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updateTask5(int value)
+{
+    taskNumbersFromUI[4] = value;
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updateTasksTypesList()
+{
+    QList<int> tempList;
+    for(int j=0; j < 5; ++j)
+    {
+        for (int i=0; i < taskNumbersFromUI[j]; ++i )
+        {
+            tempList.append(j);
+        }
+    }
+    this->TasksTypes = QList2Vector(tempList);
+    qDebug() << tempList;
+}
+
+void Controller::updateBuffers()
+{
+
+}
+
+
+void Controller::updatemBuffer1(int value)
+{
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updatemBuffer2(int value)
+{
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updatemBuffer3(int value)
+{
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updatemBuffer4(int value)
+{
+    qDebug() << "Auch!" << value;
+}
+
+void Controller::updatemBuffer5(int value)
+{
+    qDebug() << "Auch!" << value;
+}

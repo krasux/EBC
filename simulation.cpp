@@ -88,8 +88,8 @@ void Simulation::run()
 
 void Simulation::init()
 {
-    place_times = new int[30];
-    for(int i=0; i<30;i++)
+    place_times = new int[36];
+    for(int i=0; i<36;i++)
     {
         place_times[i]=5000;
     }

@@ -39,10 +39,6 @@ Scene::Scene(QObject *parent) : QGraphicsScene(parent)
 {
     setBackground();
     setUpPositionTable();
-
-    test();
-
-    qDebug() << "Date:" << QDate::currentDate();
 }
 
 

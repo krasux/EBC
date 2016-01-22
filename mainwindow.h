@@ -7,6 +7,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include "scene.h"
+#include <QPushButton>
 
 namespace Ui {
 class MainWindow;
@@ -21,9 +22,9 @@ public:
     ~MainWindow();
     Scene *scene;
 
-private:
-    Ui::MainWindow *ui;
 
+    Ui::MainWindow *ui;
+    QPushButton *btn;
 
 
 

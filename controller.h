@@ -26,7 +26,7 @@ class Controller : public QThread
     Q_OBJECT
 public:
     explicit Controller(QThread *parent = 0);
-//fragment od Marcina
+
     MatrixXf Incidence;
     std::vector<VectorXf> Types;
     VectorXf Marking;
@@ -37,11 +37,19 @@ public:
     std::vector<int> Priorities;	//priorities from 0 (lowest)
     std::vector<int> RunningOnPlant;
 
+
     void init();
     void run();
     int process();
     int EmitState();
-//koniec fragmentu marcina
+private:
+    QList<int> taskTypesFromUI;
+    QList<int> taskNumbersFromUI;
+    VectorXf buffersFromUI;
+    std::vector<int> QList2Vector(QList<int> list);
+    void updateTasksTypesList();
+    void updateBuffers();
+
 signals:
     void FireTrans(QString value);
     void emitMarkings(const QList<QStringList> &marking);
@@ -50,6 +58,22 @@ public:
     void UpdateState(QString value);
 public slots:
     void TaskEnd(int TaskNumber);
+    void restart();
+    void update();
+    void updateTask1(int value);
+    void updateTask2(int value);
+    void updateTask3(int value);
+    void updateTask4(int value);
+    void updateTask5(int value);
+
+    void updatemBuffer1(int value);
+    void updatemBuffer2(int value);
+    void updatemBuffer3(int value);
+    void updatemBuffer4(int value);
+    void updatemBuffer5(int value);
+
+
+
 };
 
 
