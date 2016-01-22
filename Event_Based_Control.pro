@@ -29,4 +29,4 @@ FORMS    += mainwindow.ui
 RESOURCES += \
     graphics.qrc
 
-CONFIG += c++14
+CONFIG += c++11

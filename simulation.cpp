@@ -43,9 +43,9 @@ void Simulation::UpdateState(QString value)
             }
         }
     }
-   // QTimer::singleShot(200, this, SLOT(TimerTimeout(int));
-            shot_time=place_times[place_number];
-            /*QTimer * timer = new QTimer();
+    // QTimer::singleShot(200, this, SLOT(TimerTimeout(int));
+    shot_time=place_times[place_number];
+    /*QTimer * timer = new QTimer();
             QObject::connect(timer, &QTimer::timeout, [=]() {
                  //TimerTimeout(TaskNumber);
                 emit TaskEnd(TaskNumber);
@@ -53,13 +53,13 @@ void Simulation::UpdateState(QString value)
             timer->start(shot_time);
 */
 
-            QTimer * timer = new QTimer();
+    QTimer * timer = new QTimer();
 
-            qDebug()<<"Timer launch on place: "<<place_number<<endl;
-            connect(timer, SIGNAL(timeout()), this, SLOT(TimerTimeout()));
-            timer->start(shot_time);
-            timer->setProperty("A",TaskNumber);
-            timer->setProperty("B",timer->timerId());
+    qDebug()<<"Timer launch on place: "<<place_number<<endl;
+    connect(timer, SIGNAL(timeout()), this, SLOT(TimerTimeout()));
+    timer->start(shot_time);
+    timer->setProperty("A",TaskNumber);
+    timer->setProperty("B",timer->timerId());
 
 }
 void Simulation::TimerTimeout()
@@ -81,11 +81,11 @@ void Simulation::value()
 
 void Simulation::run()
 {
-   while(true)
-   {
-       this->sleep(1);
-       this->value();
-   }
+    while(true)
+    {
+        this->sleep(1);
+        this->value();
+    }
 }
 
 void Simulation::init()
@@ -93,14 +93,10 @@ void Simulation::init()
     place_times = new int[36];
     for(int i=0; i<36;i++)
     {
-        if(i%3)
-        {
-            place_times[i]=1000;
-        }
-        else
-        {
-            place_times[i]=3000;
-        }
+        place_times[i]=3000;
     }
     place_times[R1] = 10000;
+    place_times[R10] = 500;
+    place_times[W1] = 10000;
+
 }
